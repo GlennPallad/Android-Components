@@ -1,2 +1,1 @@
-
-##### This is a simple Android joystick component.
+This is a simple Android joystick component.
