@@ -1,4 +1,4 @@
-package xyz.pallad.joystick;
+package com.bitwitcher.joystick;
 
 import org.junit.Test;
 

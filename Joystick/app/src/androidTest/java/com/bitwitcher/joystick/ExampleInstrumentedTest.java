@@ -1,4 +1,4 @@
-package xyz.pallad.joystick;
+package com.bitwitcher.joystick;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
 		// Context of the app under test.
 		Context appContext = InstrumentationRegistry.getTargetContext();
 
-		assertEquals("xyz.pallad.joystick", appContext.getPackageName());
+		assertEquals("com.bitwitcher.joystick", appContext.getPackageName());
 	}
 }

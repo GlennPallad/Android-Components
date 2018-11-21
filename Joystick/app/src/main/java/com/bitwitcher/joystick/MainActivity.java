@@ -1,4 +1,4 @@
-package xyz.pallad.joystick;
+package com.bitwitcher.joystick;
 
 import android.app.Activity;
 import android.os.Bundle;
