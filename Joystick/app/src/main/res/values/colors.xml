@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="colorPrimary">#008577</color>
-	<color name="colorPrimaryDark">#00574B</color>
-	<color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorClouds">#ecf0f1</color>
+    <color name="colorWetAsphalt">#34495e</color>
+    <color name="colorMidnightBlue">#2c3e50</color>
+    <color name="colorAlizarin">#e74c3c</color>
+    <color name="colorAsbestos">#7f8c8d</color>
+    <color name="colorGreenSea">#16a085</color>
+    <color name="colorPomegranate">#c0392b</color>
+    <color name="colorElectromagnetic">#2f3640</color>
 </resources>

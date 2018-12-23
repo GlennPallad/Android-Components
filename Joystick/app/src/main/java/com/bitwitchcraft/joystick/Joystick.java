@@ -1,11 +1,4 @@
-/*
- * Joystick Component
- *
- * Copyright (c) 2018 Wulfric Lee
- * Released under the MIT license.
- */
-
-package com.bitwitcher.joystick;
+package com.bitwitchcraft.joystick;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -26,8 +19,8 @@ public class Joystick extends View {
 	private float innerCircleY;
 	private float innerCircleR;
 	private float innerCircleRangeRadius;
-	private float mCCX;
-	private float mCCY;
+	private float CCX;
+	private float CCY;
 	private float rate;
 	private int mWidth;
 	private int mHeight;
@@ -93,22 +86,22 @@ public class Joystick extends View {
 	public boolean onTouchEvent(MotionEvent event) {
 		if (event.getActionMasked() == MotionEvent.ACTION_DOWN || event.getActionMasked() == MotionEvent.ACTION_MOVE) {
 			float pointerRadius = (float) Math.sqrt(Math.pow(getCCX(event), 2) + Math.pow(getCCY(event), 2));
-			mCCX = getCCX(event);
-			mCCY = getCCY(event);
+			CCX = getCCX(event);
+			CCY = getCCY(event);
 			if (pointerRadius < innerCircleRangeRadius) {
 				innerCircleX = event.getX();
 				innerCircleY = event.getY();
-				factorX = mCCX/innerCircleRangeRadius;
-				factorY = (-mCCY)/innerCircleRangeRadius;
+				factorX = CCX/innerCircleRangeRadius;
+				factorY = (-CCY)/innerCircleRangeRadius;
 				Log.d("Joystick", "onTouchEvent: 1");
 				Log.d("Joystick", "factorX = " + decimalFormat.format(factorX));
 				Log.d("Joystick", "factorY = " + decimalFormat.format(factorY));
 			} else {
 				rate = pointerRadius/innerCircleRangeRadius;
-				innerCircleX = mCCX/rate + originPointX;
-				innerCircleY = mCCY/rate + originPointY;
-				factorX = mCCX/rate/innerCircleRangeRadius;
-				factorY = (-mCCY)/rate/innerCircleRangeRadius;
+				innerCircleX = CCX/rate + originPointX;
+				innerCircleY = CCY/rate + originPointY;
+				factorX = CCX/rate/innerCircleRangeRadius;
+				factorY = (-CCY)/rate/innerCircleRangeRadius;
 				Log.d("Joystick", "onTouchEvent: 2");
 				Log.d("Joystick", "factorX = " + decimalFormat.format(factorX));
 				Log.d("Joystick", "factorY = " + decimalFormat.format(factorY));
@@ -127,7 +120,7 @@ public class Joystick extends View {
 	}
 
 	/**
-	 * Get CenterCoordinate X.
+	 * @brief Get CenterCoordinate X.
 	 * @param event 	MotionEvent that we wanna get its X value in CenterCoordinate,
 	 * 				Which is a hypothetical coordinate whose origin point is (originPointX, originPointY).
 	 */
@@ -136,7 +129,7 @@ public class Joystick extends View {
 	}
 
 	/**
-	 * Get CenterCoordinate Y.
+	 * @brief Get CenterCoordinate Y.
 	 * @param event 	MotionEvent that we wanna get its Y value in CenterCoordinate,
 	 * 				Which is a hypothetical coordinate whose origin point is (originPointX, originPointY).
 	 * @NOTE 		For Y, DOWNSIDE is POSITIVE, UPSIDE is NEGATIVE.
